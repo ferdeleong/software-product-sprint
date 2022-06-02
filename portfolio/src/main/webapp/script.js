@@ -17,7 +17,7 @@
  */
 function addRandomGreeting() {
   const greetings =
-      ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
+      ['Im the king of the world! (Titanic)', 'Ill be back (Terminator)', 'Yo,Adrian! (Rocky)', 'We will always have Paris (Casablanca)'];
 
   // Pick a random greeting.
   const greeting = greetings[Math.floor(Math.random() * greetings.length)];
