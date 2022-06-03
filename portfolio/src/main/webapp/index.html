@@ -7,14 +7,19 @@
     <script src="script.js"></script>
   </head>
   <body>
-    <div id="content">
-      <h1>Fernanda's Portfolio</h1>
-      <p>This is my portfolio. I'm loving every part of Week 1! </p>
-      <p>Click <a href="/hello">here</a> to see content created by server code.</p>
-      <p>Click here to get a random movie quote:</p>
-      <button onclick="addRandomGreeting()">Movie</button>
-      <div id="greeting-container"></div>
-      <img src="/images/1.jpg" />
-    </div>
+        <div class="content">
+            <div class="column" style="background-image: url('/images/about.jpg');">
+                About
+            </div>
+            <div class="column" style="background-image: url('/images/projects.jpg');">
+                Projects
+            </div>
+            <div class="column" style="background-image: url('/images/gallery.jpg');">
+                Gallery
+            </div>
+            <div class="column" style="background-image: url('/images/me.jpg');">
+                Me
+            </div>
+        </div>
   </body>
 </html>
