@@ -29,11 +29,11 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    filter: blur(0.5px);
+    filter: blur(0.10px);
     -webkit-filter: blur(0.5px);   
     height: 100vh;
     padding-left: 30px;
     padding-top: 20px;
     width: 25vw;
-    }
-    
+}
+
