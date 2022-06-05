@@ -7,6 +7,33 @@
 #root {
     display: flex;
     flex-direction: column;
-    width: 100%;
     height: 100vh;
+    width: 100%;
 }
+
+.header-section {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.content-section {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+.column {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    filter: blur(0.5px);
+    -webkit-filter: blur(0.5px);   
+    height: 100vh;
+    padding-left: 30px;
+    padding-top: 20px;
+    width: 25vw;
+    }
+    
