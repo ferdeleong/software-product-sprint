@@ -7,13 +7,26 @@
     <script src="script.js"></script>
   </head>
   <body>
-    <div id="content">
-      <h1>My Portfolio</h1>
-      <p>This is my portfolio.</p>
-      <p>Click <a href="/hello">here</a> to see content created by server code.</p>
-      <p>Click here to get a random message:</p>
-      <button onclick="addRandomGreeting()">Hello</button>
-      <div id="greeting-container"></div>
-    </div>
+      <div id="root">
+          <div class="header-section">
+              <div class="column" style="background-image: url(/images/header/about.jpg);">
+                  <h3>01</h3>
+                  <h1>About</h1>
+              </div>
+              <div class="column" style="background-image: url(/images/header/projects.jpg);">
+                  <h3>02</h3>
+                  <h1>Projects</h1>
+              </div>
+              <div class="column" style="background-image: url(/images/header/gallery.jpg);">
+                  <h3>03</h3>
+                  <h1>Gallery</h1>
+              </div>
+              <div class="column" style="background-image: url(/images/me.jpg);">
+                  <h3>04</h3>
+                  <h1>Me</h1>
+              </div>
+          </div>
+      </div>
   </body>
 </html>
+
