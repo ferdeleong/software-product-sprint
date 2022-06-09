@@ -11,14 +11,28 @@
   width: 100%;
 }
 
+#gallery-images {
+    display: flex;
+    justify-content: space-between;
+    width: 90vw;
+}
+
 .middle-section {
     width: 60%;
 }
 
-#gallery-section {
+.horizontal-list {
     display: flex;
-    justify-content: space-between;
-    width: 100%;
+    justify-content: flex-start;
+    width: 90vw;
+}
+
+.horizontal-list-item {
+    margin-right: 5px;
+    padding: 5px;
+    color: white;
+    background-color: blue;
+    border-radius: 5px;
 }
 
 .header-section {

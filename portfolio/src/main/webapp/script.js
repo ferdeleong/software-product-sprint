@@ -105,6 +105,8 @@ function addRandomGreeting() {
 }
 
 function loadContent () {
+    const br = document.createElement("br");
+
     //About section
     const aboutSection = document.getElementById("about-section");
     const quote = document.createElement("quote");
@@ -115,7 +117,6 @@ function loadContent () {
         const paragraphDiv = document.createElement('div');
         paragraphDiv.innerHTML = description;
         aboutSection.appendChild(paragraphDiv);
-        const br = document.createElement("br");
         aboutSection.appendChild(br);
     });
     
@@ -134,31 +135,53 @@ function loadContent () {
         // Insert complete div into projectSection
         projectSection.appendChild(projectContainer);
     });
+    projectSection.appendChild(br);
 
     //Gallery section
     const gallerySection = document.getElementById("gallery-section");
+    const galleryImages = document.getElementById("gallery-images");
     const galleryDescription = document.createElement('div');
     galleryDescription.innerHTML = content.gallery.description;
-    gallerySection.appendChild(galleryDescription);
+    gallerySection.insertBefore(galleryDescription, galleryImages);
      //Iterates over gallery pictures
     content.gallery.images.forEach(function (imageUrl) {
         const image = document.createElement('img');
         image.src = imageUrl;
         image.width = 400;
         image.height = 400;
-        gallerySection.appendChild(image);
+        galleryImages.appendChild(image);
     });
  
     //Me section
-    const hometown = document.getElementById("hometown");
-    hometown.innerText = content.me.hometown;
+    const meSection = document.getElementById('me-section');
+    const meDegrees = document.getElementById('me-degrees');
+    const hometown = document.getElementById('me-hometown');
+    hometown.innerHTML = content.me.hometown;
+    const school = document.getElementById('me-school');
+    school.innerHTML = content.me.education.school;
+    // Iterates over degrees
+    content.me.education.degrees.forEach(function(degree) {
+        const degreeDiv = document.createElement('div');
+        degreeDiv.innerHTML = degree;
+        meDegrees.appendChild(degreeDiv);
+    })
+    meSection.appendChild(br);
 
-    //Education sub-section
-    const school = document.getElementById("school");
-    school.innerText = content.me.education.school;
+    const meLanguage = document.getElementById('me-languages');
+    content.me.skills.languages.forEach(function(language) {
+        const languageDiv= document.createElement('div');
+        languageDiv.innerHTML = language;
+        languageDiv.classList.add('horizontal-list-item');
+        meLanguage.appendChild(languageDiv);
+    })
+    meSection.appendChild(br);
 
-    //Skills sub-section
-    const degrees = document.getElementById("degrees");
-    degrees.innerText = content.me.education.degrees;
-
+    const meKnowledge = document.getElementById('me-knowledge');
+    content.me.skills.knowledge.forEach(function(knowledge) {
+        const knowledgeDiv= document.createElement('div');
+        knowledgeDiv.innerHTML = knowledge;
+        knowledgeDiv.classList.add('horizontal-list-item');
+        meKnowledge.appendChild(knowledgeDiv);
+    })
+    meSection.appendChild(br);
 }
