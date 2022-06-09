@@ -18,7 +18,7 @@ const content = {
         You can’t keep growing and working on yourself without accepting where you are right now.
         Acceptance is your key to freedom.
       `,
-      paragraph: [
+      description: [
         `
           I believe that my education in BS Architecture and developed creativeness 
           combined with Computer Science give me an especially great advantage when 
@@ -63,7 +63,11 @@ const content = {
         of construction, so everytime you see a building you are looking directly at 
         a time capsule.
       `,
-      images: ["image1.jpeg"]
+      images: [
+          "/images/architecture/baroque_architecture.jpg",
+          "/images/architecture/green_architecture.jpg",
+          "/images/architecture/mosque_architecture.jpg"
+        ]
     },
     me: {
       hometown: "Monterrey, México",
@@ -102,20 +106,49 @@ function addRandomGreeting() {
 
 function loadContent () {
     //About section
-    const quote = document.getElementById("quote");
-    quote.innerText = content.about.quote;
-
-    const aboutParagraph = document.getElementById("aboutParagraph");
-    aboutParagraph.innerText = content.about.paragraph;
+    const aboutSection = document.getElementById("about-section");
+    const quote = document.createElement("quote");
+    quote.innerHTML = content.about.quote;
+    aboutSection.appendChild(quote);
+    //Iterates over array description
+    content.about.description.forEach(function (description) {
+        const paragraphDiv = document.createElement('div');
+        paragraphDiv.innerHTML = description;
+        aboutSection.appendChild(paragraphDiv);
+        const br = document.createElement("br");
+        aboutSection.appendChild(br);
+    });
     
     //Projects section
-    const project1 = document.getElementById("project");
-    project1.innerText = content.projects;
+    const projectSection = document.getElementById("project-section");
+    content.projects.forEach(function (project) {
+        const projectName = document.createElement('h3');
+        projectName.innerHTML = project.name;
+        const projectDescription = document.createElement('div');
+        projectDescription.innerHTML = project.description;
+        const projectContainer = document.createElement('div');
+        // Insert divs into container div
+        projectContainer.appendChild(projectName);
+        projectContainer.appendChild(projectDescription);
+        
+        // Insert complete div into projectSection
+        projectSection.appendChild(projectContainer);
+    });
 
     //Gallery section
-    const galleryDescription = document.getElementById("galleryDescription");
-    galleryDescription.innerText = content.gallery.description;
-    
+    const gallerySection = document.getElementById("gallery-section");
+    const galleryDescription = document.createElement('div');
+    galleryDescription.innerHTML = content.gallery.description;
+    gallerySection.appendChild(galleryDescription);
+     //Iterates over gallery pictures
+    content.gallery.images.forEach(function (imageUrl) {
+        const image = document.createElement('img');
+        image.src = imageUrl;
+        image.width = 400;
+        image.height = 400;
+        gallerySection.appendChild(image);
+    });
+ 
     //Me section
     const hometown = document.getElementById("hometown");
     hometown.innerText = content.me.hometown;

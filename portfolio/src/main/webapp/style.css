@@ -11,6 +11,16 @@
   width: 100%;
 }
 
+.middle-section {
+    width: 60%;
+}
+
+#gallery-section {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
 .header-section {
   display: flex;
   justify-content: space-evenly;
