@@ -16,9 +16,11 @@ public class HelloWorldServlet extends HttpServlet {
     
     String funFacts[] = {"I love ice skating", "I enjoy watching The Office", "I love pasta"};
     Gson gson = new Gson();
-    String json = gson.toJson(funFacts);
-    // "{\"I love ice skating\", \"I enjoy watching The Office\", \"I love pasta\"}"
 
+    // From string to Json format
+    String json = gson.toJson(funFacts);
+
+    // From Json to original ojbect format
     response.setContentType("application/json;");
     response.getWriter().println(json);
   }
