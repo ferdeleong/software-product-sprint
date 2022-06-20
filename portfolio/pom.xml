@@ -21,6 +21,13 @@
 
   <dependencies>
 
+    <!-- Cloud Natural Languaje --> 
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-language</artifactId>
+      <version>1.55.0</version>
+    </dependency>
+
     <!-- Gson -->
     <dependency>
       <groupId>com.google.code.gson</groupId>
