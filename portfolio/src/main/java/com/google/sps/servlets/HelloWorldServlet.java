@@ -14,7 +14,7 @@ public class HelloWorldServlet extends HttpServlet {
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
     
-    String funFacts[] = {"I love ice skating", "I enjoy watching The Office", "I love pasta"};
+    String funFacts[] = {"I love ice skating", "I enjoy watching The Office", "I love pasta", "I love dogs", "My lucky number is 7"};
     Gson gson = new Gson();
 
     // From string to Json format

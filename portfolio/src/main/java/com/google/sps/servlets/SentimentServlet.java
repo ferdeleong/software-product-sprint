@@ -23,6 +23,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/** Handles the sentiment score on sumbited text */
 @WebServlet("/sentiment")
 public class SentimentServlet extends HttpServlet {
 
